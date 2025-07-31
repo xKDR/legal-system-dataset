@@ -1,0 +1,42 @@
+---
+title: "Data Release"
+format: html
+css: styles.css
+---
+
+# Bombay High Court and NCLT Data Release
+
+This page provides access to our dataset containing Bombay High Court and NCLT case data for specific case types. Download the CSV file below and explore key details about the data.
+
+## Download Dataset
+
+[Download Case Data](bhc_data.csv){.btn download=true}
+
+## Facts About the Data
+
+**Name**: *Bombay High Court and NCLT Case Data*  
+**Description**: Case records from Bombay High Court and National Company Law Tribunal (NCLT) for selected case types.  
+
+**Rows**: *[To be updated with actual count]*  
+**Columns**:
+
+- `matter_id`: Unique identifier for each record  
+- `court_name`: Name of the court where the case was filed
+- `filing_no`: Case filing number  
+- `filing_date`: Date the case was filed  
+- `disposal_date`: Date the case was disposed  
+- `hearing_id`: Unique identifier for hearing  
+- `hearing_date`: Date of the hearing  
+- `case_status`: Current status of the case (e.g., Pending, Disposed)  
+- `case_typology`: Type of case (e.g., Commercial Suits, Suits, Summary Suits)  
+
+---
+
+**Source**: Bombay High Court and NCLT records  
+
+
+## Tips for Exploration
+
+Use tools like **Excel**, **R**, or **Python** to analyze the data and build insights.
+
+---
