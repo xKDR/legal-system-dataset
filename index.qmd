@@ -17,8 +17,7 @@ This page provides access to our dataset containing Bombay High Court and NCLT c
 **Name**: *Bombay High Court and NCLT Case Data*  
 **Description**: Case records from Bombay High Court and National Company Law Tribunal (NCLT) for selected case types.  
 
-**Rows**: *[To be updated with actual count]*  
-**Columns**:
+**Data Description**:
 
 - `matter_id`: Unique identifier for each record  
 - `court_name`: Name of the court where the case was filed
@@ -32,7 +31,12 @@ This page provides access to our dataset containing Bombay High Court and NCLT c
 
 ---
 
-**Source**: Bombay High Court and NCLT records  
+**Source**: Bombay High Court and NCLT  
+The last date of updation is reflected in the dataset itself.
+
+**Research**
+1.[Helping litigants make informed choices in resolving debt disputes](https://blog.theleapjournal.org/2023/06/helping-litigants-make-informed-choices.html#gsc.tab=0) — Pavithra Manivannan, Susan Thomas, and Bhargavi Zaveri-Shah, Leap Blog, June 2023
+2. [Evaluating courts from a litigant's perspective: A project report](https://www.xkdr.org/paper/evaluating-courts-from-a-litigants-perspective-a-project-report) - Pavithra Manivannan, Geetika Palta, Susan Thomas, and Bhargavi Zaveri-Shah, December 2023
 
 
 ## Tips for Exploration

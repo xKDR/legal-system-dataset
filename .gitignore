@@ -1,1 +1,23 @@
-/.quarto/
+# Ignore Quarto's default render folder
+_site/
+
+# Ignore temporary files and OS clutter
+*.DS_Store
+*.Rproj.user/
+.Rhistory
+.RData
+.Rproj
+*.pyc
+__pycache__/
+
+# Ignore VSCode settings (if using)
+.vscode/
+
+# Ignore Quarto cache and metadata (optional but clean)
+.quarto/
+
+# Optional: Ignore any build artifacts not needed
+*.log
+*.aux
+*.out
+*.toc
