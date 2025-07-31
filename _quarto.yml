@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "data_release"
@@ -16,5 +17,5 @@ format:
     css: styles.css
     toc: true
 
-
-
+resources:
+  - bhc_data.csv

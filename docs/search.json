@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Release",
+    "section": "",
+    "text": "This page provides access to our dataset containing Bombay High Court and NCLT case data for specific case types. Download the CSV file below and explore key details about the data.\n\n\nDownload Case Data\n\n\n\nName: Bombay High Court and NCLT Case Data\nDescription: Case records from Bombay High Court and National Company Law Tribunal (NCLT) for selected case types.\nRows: [To be updated with actual count]\nColumns:\n\nmatter_id: Unique identifier for each record\n\ncourt_name: Name of the court where the case was filed\nfiling_no: Case filing number\n\nfiling_date: Date the case was filed\n\ndisposal_date: Date the case was disposed\n\nhearing_id: Unique identifier for hearing\n\nhearing_date: Date of the hearing\n\ncase_status: Current status of the case (e.g., Pending, Disposed)\n\ncase_typology: Type of case (e.g., Commercial Suits, Suits, Summary Suits)\n\n\nSource: Bombay High Court and NCLT records\n\n\n\nUse tools like Excel, R, or Python to analyze the data and build insights."
+  },
+  {
+    "objectID": "index.html#download-dataset",
+    "href": "index.html#download-dataset",
+    "title": "Data Release",
+    "section": "",
+    "text": "Download Case Data"
+  },
+  {
+    "objectID": "index.html#facts-about-the-data",
+    "href": "index.html#facts-about-the-data",
+    "title": "Data Release",
+    "section": "",
+    "text": "Name: Bombay High Court and NCLT Case Data\nDescription: Case records from Bombay High Court and National Company Law Tribunal (NCLT) for selected case types.\nRows: [To be updated with actual count]\nColumns:\n\nmatter_id: Unique identifier for each record\n\ncourt_name: Name of the court where the case was filed\nfiling_no: Case filing number\n\nfiling_date: Date the case was filed\n\ndisposal_date: Date the case was disposed\n\nhearing_id: Unique identifier for hearing\n\nhearing_date: Date of the hearing\n\ncase_status: Current status of the case (e.g., Pending, Disposed)\n\ncase_typology: Type of case (e.g., Commercial Suits, Suits, Summary Suits)\n\n\nSource: Bombay High Court and NCLT records"
+  },
+  {
+    "objectID": "index.html#tips-for-exploration",
+    "href": "index.html#tips-for-exploration",
+    "title": "Data Release",
+    "section": "",
+    "text": "Use tools like Excel, R, or Python to analyze the data and build insights."
+  }
+]
