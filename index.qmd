@@ -2,32 +2,47 @@
 title: "Data Release"
 format: html
 css: styles.css
+image: "images/bhc_median_hearings_by_category.png"
+lightbox:
+  match: auto
+  effect: fade
+  desc-position: right
+  loop: false
+  css-class: "my-css-class"
 ---
 
 # Bombay High Court and NCLT Data Release
 
-Building upon XKDR's pioneering research into litigant decision-making, we are thrilled to announce the public release of an expanded dataset covering cases filed and heard at the [Bombay High Court](https://xkdr.substack.com/p/xkdr-newsletter-issue-25?utm_source=publication-search) and the [National Company Law Tribunal](https://xkdr.substack.com/p/xkdr-newsletter-issue-24?utm_source=publication-search). This release significantly augments the data underpinning our previous findings on three critical questions concerning litigant behavior and judicial outcomes. 
+Building upon XKDR's pioneering research into litigant decision-making, we are thrilled to announce the public release of an expanded dataset covering cases filed and heard at the [Bombay High Court](https://xkdr.substack.com/p/xkdr-newsletter-issue-25?utm_source=publication-search) and the [National Company Law Tribunal](https://xkdr.substack.com/p/xkdr-newsletter-issue-24?utm_source=publication-search). This release significantly augments the data underpinning our previous findings on three critical questions concerning litigant behavior and judicial outcomes.
+
+![](images/bhc_median_hearings_by_category.png){width=20% style="margin-right: 1rem" .lightbox group="gallery"}
+![](images/bhc_time_to_disposal.png){width=20% style="margin-right: 1rem" .lightbox group="gallery"}
+![](images/bhc_time_to_first_hearing.png){width=20% style="margin-right: 1rem" .lightbox group="gallery"}
+![](images/nclt_time_to_disposal_probability.png){width=20% style="margin-right: 1rem" .lightbox group="gallery"}
+![](images/nclt_time_to_first_hearing.png){width=20% .lightbox group="gallery"}
+
 
 ## Download Dataset
 
-[Download Case Data](bhc_data.csv){.btn download=true}
+[Download Matters Data](data/matters.csv){.btn download=true}
+[Download Hearings Data](data/hearings.csv){.btn download=true}
 
 ## Facts About the Data
 
 **Name**: *Bombay High Court and NCLT Case Data*  
-**Description**: Case records from Bombay High Court and National Company Law Tribunal (NCLT) for selected case types.  
+**Description**: Case records from Bombay High Court and National Company Law Tribunal (NCLT) for selected case types.
 
 **Data Description**:
 
-- `matter_id`: Unique identifier for each record  
+- `matter_id`: Unique identifier for each record
 - `court_name`: Name of the court where the case was filed
-- `filing_no`: Case filing number  
-- `filing_date`: Date the case was filed  
-- `disposal_date`: Date the case was disposed  
-- `hearing_id`: Unique identifier for hearing  
-- `hearing_date`: Date of the hearing  
-- `case_status`: Current status of the case (e.g., Pending, Disposed)  
-- `case_typology`: Type of case (e.g., Commercial Suits, Suits, Summary Suits)  
+- `filing_no`: Case filing number
+- `filing_date`: Date the case was filed
+- `disposal_date`: Date the case was disposed
+- `hearing_id`: Unique identifier for hearing
+- `hearing_date`: Date of the hearing
+- `case_status`: Current status of the case (e.g., Pending, Disposed)
+- `case_typology`: Type of case (e.g., Commercial Suits, Suits, Summary Suits)
 
 ---
 
@@ -36,12 +51,9 @@ The last date of updation is reflected in the dataset itself.
 
 **Related Research**
 
-1. [Helping litigants make informed choices in resolving debt disputes](https://blog.theleapjournal.org/2023/06/helping-litigants-make-informed-choices.html#gsc.tab=0) — *Pavithra Manivannan, Susan Thomas, and Bhargavi Zaveri-Shah*, Leap Blog, June 2023  
+1. [Helping litigants make informed choices in resolving debt disputes](https://blog.theleapjournal.org/2023/06/helping-litigants-make-informed-choices.html#gsc.tab=0) — *Pavithra Manivannan, Susan Thomas, and Bhargavi Zaveri-Shah*, Leap Blog, June 2023
 2. [Evaluating courts from a litigant's perspective: A project report](https://www.xkdr.org/paper/evaluating-courts-from-a-litigants-perspective-a-project-report) — *Pavithra Manivannan, Geetika Palta, Susan Thomas, and Bhargavi Zaveri-Shah*, December 2023
-
 
 ## Tips for Exploration
 
 Use tools like **Excel**, **R**, or **Python** to analyze the data and build insights.
-
----
