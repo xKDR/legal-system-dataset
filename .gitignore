@@ -1,8 +1,19 @@
 # Ignore Quarto's default render folder
 _site/
 
+
 # Ignore temporary files and OS clutter
 *.DS_Store
+# Notebook artifacts
+cell-*-output-*.png
+*.ipynb_checkpoints/
+
+# Python & Jupyter junk
+*.pyc
+__pycache__/
+
+# R & RStudio
+
 *.Rproj.user/
 .Rhistory
 .RData
