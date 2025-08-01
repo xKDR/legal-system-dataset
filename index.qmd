@@ -6,7 +6,7 @@ css: styles.css
 
 # Bombay High Court and NCLT Data Release
 
-This page provides access to our dataset containing Bombay High Court and NCLT case data for specific case types. Download the CSV file below and explore key details about the data.
+Building upon XKDR's pioneering research into litigant decision-making, we are thrilled to announce the public release of an expanded dataset covering cases filed and heard at the [Bombay High Court](https://xkdr.substack.com/p/xkdr-newsletter-issue-25?utm_source=publication-search) and the [National Company Law Tribunal](https://xkdr.substack.com/p/xkdr-newsletter-issue-24?utm_source=publication-search). This release significantly augments the data underpinning our previous findings on three critical questions concerning litigant behavior and judicial outcomes. 
 
 ## Download Dataset
 
@@ -34,9 +34,10 @@ This page provides access to our dataset containing Bombay High Court and NCLT c
 **Source**: Bombay High Court and NCLT  
 The last date of updation is reflected in the dataset itself.
 
-**Research**
-1.[Helping litigants make informed choices in resolving debt disputes](https://blog.theleapjournal.org/2023/06/helping-litigants-make-informed-choices.html#gsc.tab=0) — Pavithra Manivannan, Susan Thomas, and Bhargavi Zaveri-Shah, Leap Blog, June 2023
-2. [Evaluating courts from a litigant's perspective: A project report](https://www.xkdr.org/paper/evaluating-courts-from-a-litigants-perspective-a-project-report) - Pavithra Manivannan, Geetika Palta, Susan Thomas, and Bhargavi Zaveri-Shah, December 2023
+**Related Research**
+
+1. [Helping litigants make informed choices in resolving debt disputes](https://blog.theleapjournal.org/2023/06/helping-litigants-make-informed-choices.html#gsc.tab=0) — *Pavithra Manivannan, Susan Thomas, and Bhargavi Zaveri-Shah*, Leap Blog, June 2023  
+2. [Evaluating courts from a litigant's perspective: A project report](https://www.xkdr.org/paper/evaluating-courts-from-a-litigants-perspective-a-project-report) — *Pavithra Manivannan, Geetika Palta, Susan Thomas, and Bhargavi Zaveri-Shah*, December 2023
 
 
 ## Tips for Exploration
