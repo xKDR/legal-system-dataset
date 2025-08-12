@@ -7,7 +7,7 @@ _site/
 # Notebook artifacts
 cell-*-output-*.png
 *.ipynb_checkpoints/
-
+docs/
 # Python & Jupyter junk
 *.pyc
 __pycache__/

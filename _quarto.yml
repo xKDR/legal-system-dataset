@@ -3,21 +3,23 @@ project:
   output-dir: docs
 
 website:
-  title: "Data Release"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
+      - text: Home
+        file: index.qmd
+      - text: About Data
+        file: about.qmd
+      - text: Related Research
+        file: research.qmd
 
 format:
   html:
-    theme: flatly
+    theme: simplex
     css: styles.css
     toc: true
 
 
 resources:
-  - data/matters.csv
-  - data/hearings.csv
-  - images/** 
+  - data/
+  - images/
   - analysis.ipynb

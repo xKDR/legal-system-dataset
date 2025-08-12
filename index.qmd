@@ -1,59 +1,83 @@
 ---
-title: "Data Release"
-format: html
-css: styles.css
-image: "images/bhc_median_hearings_by_category.png"
-lightbox:
-  match: auto
-  effect: fade
-  desc-position: right
-  loop: false
-  css-class: "my-css-class"
+lightbox: true
+toc: true
+page-layout: full
+include-in-header:
+  - file: header.html
 ---
 
-# Bombay High Court and NCLT Data Release
+Data has the potential to change the way all the stakeholders of the legal system – litigants, court administrators, and policy-makers – make decisions.
 
-Building upon XKDR's pioneering research into litigant decision-making, we are thrilled to announce the public release of an expanded dataset covering cases filed and heard at the [Bombay High Court](https://xkdr.substack.com/p/xkdr-newsletter-issue-25?utm_source=publication-search) and the [National Company Law Tribunal](https://xkdr.substack.com/p/xkdr-newsletter-issue-24?utm_source=publication-search). This release significantly augments the data underpinning our previous findings on three critical questions concerning litigant behavior and judicial outcomes.
+XKDR's focus is on litigants as stakeholders who make key decisions -
 
-![](images/bhc_median_hearings_by_category.png){width=20% style="margin-right: 1rem" .lightbox group="gallery"}
-![](images/bhc_time_to_disposal.png){width=20% style="margin-right: 1rem" .lightbox group="gallery"}
-![](images/bhc_time_to_first_hearing.png){width=20% style="margin-right: 1rem" .lightbox group="gallery"}
-![](images/nclt_time_to_disposal_probability.png){width=20% style="margin-right: 1rem" .lightbox group="gallery"}
-![](images/nclt_time_to_first_hearing.png){width=20% .lightbox group="gallery"}
+1. To sue or not to sue?
+2. Where to sue?
+3. What is the opportunity cost of suing vs. settling for Rs. X?
+4. What are the chances of winning?
 
+Reduced decision-making quality by litigants leads to -
 
-## Download Dataset
+1. High workload on courts
+2. Delays in disposal
+3. Inefficiencies in economic output such as contract enforcement
+4. Enhanced risk perception when evaluating the prospect of doing business in India
 
-[Download Matters Data](data/matters.csv){.btn download=true}
-[Download Hearings Data](data/hearings.csv){.btn download=true}
+## The Dataset
 
-## Facts About the Data
+<div style="text-align: center; margin: 20px 0;">
+<a href="data/xkdr_bhcDataset.zip" download="xkdr_bhcDataset.zip" class="btn">Download Bombay High Court Dataset</a>
+<a href="data/xkdr_ncltmDataset.zip" download="xkdr_ncltmDataset.zip" class="btn">Download NCLT Mumbai Dataset</a>
+</div>
 
-**Name**: *Bombay High Court and NCLT Case Data*  
-**Description**: Case records from Bombay High Court and National Company Law Tribunal (NCLT) for selected case types.
+## Analytics
 
-**Data Description**:
+<table style="width:100%; border-collapse: collapse;">
+  <tr>
+    <th style="border: 1px solid #ccc; padding: 12px;">Court</th>
+    <th colspan="3" style="border: 1px solid #ccc; padding: 12px; background-color: #ffe6e6;">Bombay High Court</th>
+    <th style="border: 1px solid #ccc; padding: 12px; background-color: #ffe6e6;">National Company Law Tribunal - Mumbai</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Category</strong></td>
+    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Suits</strong></td>
+    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Commercial Suits</strong></td>
+    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Summary Suits</strong></td>
+    <td style="border: 1px solid #ccc; padding: 12px;"><strong>IBC</strong></td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Probability of Disposal in 3 years</strong></td>
+    <td style="border: 1px solid #ccc; padding: 12px;">49.5%</td>
+    <td style="border: 1px solid #ccc; padding: 12px;">53.1%</td>
+    <td style="border: 1px solid #ccc; padding: 12px;">69.2%</td>
+    <td style="border: 1px solid #ccc; padding: 12px;">54.6%</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Probability of getting a first hearing within 6 months</strong></td>
+    <td style="border: 1px solid #ccc; padding: 12px;">51.1%</td>
+    <td style="border: 1px solid #ccc; padding: 12px;">57.5%</td>
+    <td style="border: 1px solid #ccc; padding: 12px;">40.9%</td>
+    <td style="border: 1px solid #ccc; padding: 12px;">90.7%</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Median number of hearings to Disposal</strong></td>
+    <td style="border: 1px solid #ccc; padding: 12px;">2</td>
+    <td style="border: 1px solid #ccc; padding: 12px;">3</td>
+    <td style="border: 1px solid #ccc; padding: 12px;">4.5</td>
+    <td style="border: 1px solid #ccc; padding: 12px;">8</td>
+  </tr>
+</table>
 
-- `matter_id`: Unique identifier for each record
-- `court_name`: Name of the court where the case was filed
-- `filing_no`: Case filing number
-- `filing_date`: Date the case was filed
-- `disposal_date`: Date the case was disposed
-- `hearing_id`: Unique identifier for hearing
-- `hearing_date`: Date of the hearing
-- `case_status`: Current status of the case (e.g., Pending, Disposed)
-- `case_typology`: Type of case (e.g., Commercial Suits, Suits, Summary Suits)
+## Bombay High Court
+### Probability of First Hearing Within 6 Months
+<iframe src="images/bhc_time_to_first_hearing.html" width="100%" height="600px" style="border:none; margin-top: 10px;" class="lightbox" data-group="gallery"></iframe>
 
----
+### Probability of Disposal Within 3 Years
+<iframe src="images/bhc_time_to_disposal.html" width="100%" height="600px" style="border:none; margin-top: 10px;" class="lightbox" data-group="gallery"></iframe>
 
-**Source**: Bombay High Court and NCLT  
-The last date of updation is reflected in the dataset itself.
+## National Company Law Tribunal – Mumbai
+### Probability of First Hearing Within 6 Months
+<iframe src="images/nclt_time_to_first_hearing.html" width="100%" height="600px" style="border:none; margin-top: 10px;" class="lightbox" data-group="gallery"></iframe>
 
-**Related Research**
+### Probabiliy of Disposal Within 3 Years
+<iframe src="images/nclt_time_to_disposal.html" width="100%" height="600px" style="border:none; margin-top: 10px;" class="lightbox" data-group="gallery"></iframe>
 
-1. [Helping litigants make informed choices in resolving debt disputes](https://blog.theleapjournal.org/2023/06/helping-litigants-make-informed-choices.html#gsc.tab=0) — *Pavithra Manivannan, Susan Thomas, and Bhargavi Zaveri-Shah*, Leap Blog, June 2023
-2. [Evaluating courts from a litigant's perspective: A project report](https://www.xkdr.org/paper/evaluating-courts-from-a-litigants-perspective-a-project-report) — *Pavithra Manivannan, Geetika Palta, Susan Thomas, and Bhargavi Zaveri-Shah*, December 2023
-
-## Tips for Exploration
-
-Use tools like **Excel**, **R**, or **Python** to analyze the data and build insights.

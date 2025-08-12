@@ -1,0 +1,90 @@
+---
+title: "About the Data"
+format: html
+page-layout: full
+toc: true
+include-in-header:
+  - file: header.html
+---
+
+This dataset is part of XKDR Forum's ongoing research initiative on legal systems in India. Currently, it covers case-level and hearing-level data across two major Indian forums — the **Bombay High Court** and the **National Company Law Tribunal (NCLT) - Mumbai**.
+
+### Bombay High Court
+#### Court Overview
+<div class="table-section">
+| **Field** | **Details** |
+|-----------|-------------|
+| **Side**  | Original    |
+| **Period**| Jan 2022 to Dec 2024 |
+| **Case categories** | 3 |
+</div>
+
+#### Case Statistics*
+<div class="table-section">
+| **Case category** | **Number of cases** | **Number of hearings** |
+|-------------------|---------------------|------------------------|
+| Commercial Suits  | 2123                | 6874                 |
+| Summary suits     | 111                 | 431                    |
+| Suits             | 3419                | 12475                 |
+</div>
+\* Includes connected cases. See table below for details.
+
+#### Variables available
+<div class="table-section">
+| Name | Format | Description |
+|------|--------|-------------|
+| `filing_no` | string | Case filing number as given by the Bombay High Court|
+| `court_name` | string | Name of the court where the case was filed |
+| `cnr` | string| Case number recorded, a unique 16-digit number assigned by e-Courts |
+| `filing_date` | yyyy-mm-dd | Date the case was filed |
+| `disposal_date` | yyyy-mm-dd  | Date the case was disposed |
+| `hearing_date` | yyyy-mm-dd | Date of the hearing |
+| `case_status` | Categorical | Current status of the case (e.g., Pending, Disposed) |
+| `case_typology` | Categorical | Type of case (e.g., Original_Commercial Suit, Original_SUITS) as given by the Bombay High Court|
+| `case_category` | Categorical | XKDR-generated groupings of similar typologies (e.g., Suits, Commercial) |
+| `case_nature` | Binary |  Identifies whether a matter is the primarily instituted case or a case connected to it - Main/Connected |
+| `main_matter_filing_no` | string | Case filing number of the primarly instituted case as given by the Bombay High Court |
+| `updated_on` | yyyy-mm-dd | The date of last update of the particular matter by XKDR |
+</div>
+
+### National Company Law Tribunal
+#### Court Overview
+<div class="table-section">
+| **Field** | **Details** |
+|-------|---------|
+| **Bench** | Mumbai |
+| **Period** | Jan 2022 to Dec 2024 |
+| **Case categories** | 1 |
+</div>
+
+#### Case Statistics*
+<div class="table-section">
+| Case type | Number of cases | Number of hearings |
+|-----------|--------------|-----------------|
+| Insolvency (IBC) | 7346 | 47353 |
+</div>
+\* Includes connected cases. See table below for details.
+
+#### Variables available
+<div class="table-section">
+| Name | Format | Description |
+|------|--------|-------------|
+| `filing_no` | Number | Case filing number |
+| `court_name` | Text | Name of the court where the case was filed |
+| `filing_date` | yyyy-mm-dd | Date the case was filed |
+| `disposal_date` | yyyy-mm-dd | Date the case was disposed |
+| `hearing_date` | yyyy-mm-dd | Date of the hearing |
+| `case_status` | Text | Current status of the case (e.g., Pending, Disposed) |
+| `case_typology` | Text | Type of case (Insolvency) |
+| `registration_number` | Text | Registration number assigned to the case by the court |
+| `case_nature` | Binary |  Identifies whether a matter is the primarily instituted case or a case connected to it - Main/Connected |
+| `case_category` | Categorical | XKDR-generated groupings of similar typologies (e.g: IBC) |
+| `main_matter_filing_no` | string | Case filing number of the primarly instituted case as given by the National Company Law Tribunal | 
+| `updated_on` | yyyy-mm-dd | The date of last update of the particular matter |
+</div>
+
+## Citation
+
+If using this dataset, please cite as:
+
+> XKDR Forum (2025). *Legal System Dataset*. [https://xkdr.org](https://xkdr.org)
