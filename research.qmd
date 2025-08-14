@@ -1,14 +1,15 @@
 ---
-title: "Related Research"
 format: html
 page-layout: full
 toc: true
 include-in-header:
   - file: header.html
 ---
+This data has been used to generate the following research at XKDR.
 
 ::: {.research-card}
 ## Helping litigants make informed choices in resolving debt disputes 
+
 **Authors:** Pavithra Manivannan, Susan Thomas, and Bhargavi Zaveri-Shah 
 
 **Published:** Leap Blog, June 2023

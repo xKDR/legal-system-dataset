@@ -7,10 +7,8 @@ include-in-header:
   - file: header.html
 ---
 
-This dataset is part of XKDR Forum's ongoing research initiative on legal systems in India. Currently, it covers case-level and hearing-level data across two major Indian forums — the **Bombay High Court** and the **National Company Law Tribunal (NCLT) - Mumbai**.
-
 ### Bombay High Court
-#### Court Overview
+#### Data Description
 <div class="table-section">
 | **Field** | **Details** |
 |-----------|-------------|
@@ -19,7 +17,7 @@ This dataset is part of XKDR Forum's ongoing research initiative on legal system
 | **Case categories** | 3 |
 </div>
 
-#### Case Statistics*
+#### Case Categories*
 <div class="table-section">
 | **Case category** | **Number of cases** | **Number of hearings** |
 |-------------------|---------------------|------------------------|
@@ -29,7 +27,7 @@ This dataset is part of XKDR Forum's ongoing research initiative on legal system
 </div>
 \* Includes connected cases. See table below for details.
 
-#### Variables available
+#### Variables 
 <div class="table-section">
 | Name | Format | Description |
 |------|--------|-------------|
@@ -48,7 +46,7 @@ This dataset is part of XKDR Forum's ongoing research initiative on legal system
 </div>
 
 ### National Company Law Tribunal
-#### Court Overview
+#### Data Description
 <div class="table-section">
 | **Field** | **Details** |
 |-------|---------|
@@ -57,7 +55,7 @@ This dataset is part of XKDR Forum's ongoing research initiative on legal system
 | **Case categories** | 1 |
 </div>
 
-#### Case Statistics*
+#### Case Categories*
 <div class="table-section">
 | Case type | Number of cases | Number of hearings |
 |-----------|--------------|-----------------|
@@ -65,7 +63,7 @@ This dataset is part of XKDR Forum's ongoing research initiative on legal system
 </div>
 \* Includes connected cases. See table below for details.
 
-#### Variables available
+#### Variables 
 <div class="table-section">
 | Name | Format | Description |
 |------|--------|-------------|
@@ -88,3 +86,7 @@ This dataset is part of XKDR Forum's ongoing research initiative on legal system
 If using this dataset, please cite as:
 
 > XKDR Forum (2025). *Legal System Dataset*. [https://xkdr.org](https://xkdr.org)
+
+## Note
+
+We believe the data to be comprehensive to the extent the courts have made the data publicly available and searchable on their website. 

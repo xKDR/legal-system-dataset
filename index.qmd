@@ -8,19 +8,9 @@ include-in-header:
 
 Data has the potential to change the way all the stakeholders of the legal system – litigants, court administrators, and policy-makers – make decisions.
 
-XKDR's focus is on litigants as stakeholders who make key decisions -
+At XKDR, we develop unique case lifecycle datasets that give litigants visibility over their entire case lifecycle, including connected cases (eg, Chamber Summons, Notice of Motions, Interim Applications). Litigants and court administrators can use the data to estimate the time to different milestones such as the first hearing and disposal. 
 
-1. To sue or not to sue?
-2. Where to sue?
-3. What is the opportunity cost of suing vs. settling for Rs. X?
-4. What are the chances of winning?
-
-Reduced decision-making quality by litigants leads to -
-
-1. High workload on courts
-2. Delays in disposal
-3. Inefficiencies in economic output such as contract enforcement
-4. Enhanced risk perception when evaluating the prospect of doing business in India
+This dataset contains the case lifecycle data of 5653 commercial disputes filed in the Bombay High Court and 7346 insolvency and bankruptcy (IBC) cases filed in National Company Law Tribunal - Mumbai bench between January 2022 - December 2024. It contains pending and completed cases. 
 
 ## The Dataset
 
@@ -29,55 +19,21 @@ Reduced decision-making quality by litigants leads to -
 <a href="data/xkdr_ncltmDataset.zip" download="xkdr_ncltmDataset.zip" class="btn">Download NCLT Mumbai Dataset</a>
 </div>
 
-## Analytics
+## Sample analytics from the data
+View the [Analysis Notebook](analysis.ipynb) to see the code that generated these visualizations.
 
-<table style="width:100%; border-collapse: collapse;">
-  <tr>
-    <th style="border: 1px solid #ccc; padding: 12px;">Court</th>
-    <th colspan="3" style="border: 1px solid #ccc; padding: 12px; background-color: #ffe6e6;">Bombay High Court</th>
-    <th style="border: 1px solid #ccc; padding: 12px; background-color: #ffe6e6;">National Company Law Tribunal - Mumbai</th>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Category</strong></td>
-    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Suits</strong></td>
-    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Commercial Suits</strong></td>
-    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Summary Suits</strong></td>
-    <td style="border: 1px solid #ccc; padding: 12px;"><strong>IBC</strong></td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Probability of Disposal in 3 years</strong></td>
-    <td style="border: 1px solid #ccc; padding: 12px;">49.5%</td>
-    <td style="border: 1px solid #ccc; padding: 12px;">53.1%</td>
-    <td style="border: 1px solid #ccc; padding: 12px;">69.2%</td>
-    <td style="border: 1px solid #ccc; padding: 12px;">54.6%</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Probability of getting a first hearing within 6 months</strong></td>
-    <td style="border: 1px solid #ccc; padding: 12px;">51.1%</td>
-    <td style="border: 1px solid #ccc; padding: 12px;">57.5%</td>
-    <td style="border: 1px solid #ccc; padding: 12px;">40.9%</td>
-    <td style="border: 1px solid #ccc; padding: 12px;">90.7%</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ccc; padding: 12px;"><strong>Median number of hearings to Disposal</strong></td>
-    <td style="border: 1px solid #ccc; padding: 12px;">2</td>
-    <td style="border: 1px solid #ccc; padding: 12px;">3</td>
-    <td style="border: 1px solid #ccc; padding: 12px;">4.5</td>
-    <td style="border: 1px solid #ccc; padding: 12px;">8</td>
-  </tr>
-</table>
+### Bombay High Court
 
-## Bombay High Court
-### Probability of First Hearing Within 6 Months
+#### % of cases with first hearing within 6 months of filing
 <iframe src="images/bhc_time_to_first_hearing.html" width="100%" height="600px" style="border:none; margin-top: 10px;" class="lightbox" data-group="gallery"></iframe>
 
-### Probability of Disposal Within 3 Years
+#### % of cases disposed off within 3 years of filing
 <iframe src="images/bhc_time_to_disposal.html" width="100%" height="600px" style="border:none; margin-top: 10px;" class="lightbox" data-group="gallery"></iframe>
 
-## National Company Law Tribunal – Mumbai
-### Probability of First Hearing Within 6 Months
+### National Company Law Tribunal – Mumbai
+#### % of cases with first hearing within 6 months of filing
 <iframe src="images/nclt_time_to_first_hearing.html" width="100%" height="600px" style="border:none; margin-top: 10px;" class="lightbox" data-group="gallery"></iframe>
 
-### Probabiliy of Disposal Within 3 Years
+#### % of cases disposed off within 3 years of filing
 <iframe src="images/nclt_time_to_disposal.html" width="100%" height="600px" style="border:none; margin-top: 10px;" class="lightbox" data-group="gallery"></iframe>
 
