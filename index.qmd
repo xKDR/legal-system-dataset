@@ -20,7 +20,7 @@ This dataset contains the case lifecycle data of 5653 commercial disputes filed 
 </div>
 
 ## Sample analytics from the data
-View the [Analysis Notebook](analysis.ipynb) to see the code that generated these visualizations.
+To reproduce this research, please refer to the [jupyter notebook for analysis](https://github.com/atibhis/data-release/blob/main/analysis.ipynb).
 
 ### Bombay High Court
 
