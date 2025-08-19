@@ -269,7 +269,7 @@ Name: hearing_date, dtype: float64</code></pre>
 <section id="time-to-first-hearing-within-6-months" class="level4">
 <h4 class="anchored" data-anchor-id="time-to-first-hearing-within-6-months">Time to First Hearing within 6 months</h4>
 <p>The analysis calculates the time to first hearing at the level of main_matter_id rather than individual matter_ids, reflecting the concept of case families. A main_matter_id represents a family or root case, grouping related sub-cases or matters (identified by matter_id) under a single entity. This approach captures the earliest hearing date across all matters within a case family, providing a holistic view of when the family first engages with the court process.</p>
-<div id="7ba79241" class="cell" data-execution_count="23">
+<div id="7ba79241" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>bhc_hearings[<span class="st">"hearing_date"</span>] <span class="op">=</span> pd.to_datetime(bhc_hearings[<span class="st">"hearing_date"</span>], errors<span class="op">=</span><span class="st">"coerce"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>bhc_matters[<span class="st">"filing_date"</span>] <span class="op">=</span> pd.to_datetime(bhc_matters[<span class="st">"filing_date"</span>], errors<span class="op">=</span><span class="st">"coerce"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>bhc_matters[<span class="st">"updated_on"</span>] <span class="op">=</span> pd.to_datetime(bhc_matters[<span class="st">"updated_on"</span>], errors<span class="op">=</span><span class="st">"coerce"</span>)</span>
@@ -345,13 +345,13 @@ Name: hearing_date, dtype: float64</code></pre>
 <span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>                name<span class="op">=</span>category,</span>
 <span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>                line<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="dv">2</span>),</span>
 <span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>                showlegend<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>                hovertemplate<span class="op">=</span><span class="ss">f"&lt;b&gt;</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">&lt;/b&gt;&lt;br&gt;Months: %</span><span class="ch">{{</span><span class="ss">x:.1f</span><span class="ch">}}</span><span class="ss">&lt;br&gt;First Hearing Prob: %</span><span class="ch">{{</span><span class="ss">y:.2%</span><span class="ch">}}</span><span class="ss">&lt;extra&gt;&lt;/extra&gt;"</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>                hovertemplate<span class="op">=</span><span class="ss">f"&lt;b&gt;</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">&lt;/b&gt;&lt;br&gt;Months: %</span><span class="ch">{{</span><span class="ss">x:.1f</span><span class="ch">}}</span><span class="ss">&lt;br&gt;% of cases that got a first hearing: %</span><span class="ch">{{</span><span class="ss">y:.2%</span><span class="ch">}}</span><span class="ss">&lt;extra&gt;&lt;/extra&gt;"</span></span>
 <span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>            )</span>
 <span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>        )</span>
 <span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
 <span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">"Months from Filing"</span>,</span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"Probability of First Hearing"</span>,</span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"</span><span class="sc">% o</span><span class="st">f cases"</span>,</span>
 <span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>, <span class="dv">6</span>], gridcolor<span class="op">=</span><span class="st">"rgba(0,0,0,0.3)"</span>, showgrid<span class="op">=</span><span class="va">True</span>, zeroline<span class="op">=</span><span class="va">False</span>),</span>
 <span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(gridcolor<span class="op">=</span><span class="st">"rgba(0,0,0,0.3)"</span>, showgrid<span class="op">=</span><span class="va">True</span>, zeroline<span class="op">=</span><span class="va">False</span>, tickformat<span class="op">=</span><span class="st">".0%"</span>),</span>
 <span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="bu">dict</span>(</span>
@@ -386,7 +386,7 @@ Name: hearing_date, dtype: float64</code></pre>
 <span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">int</span>(hearing_count)<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>total_count<span class="sc">}</span><span class="ss"> with first hearing, "</span></span>
 <span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f"median time to first hearing: </span><span class="sc">{</span>median_duration<span class="sc">:.2f}</span><span class="ss"> months"</span>)</span>
 <span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Probability of first hearing within 6 months:"</span>)</span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="sc">% o</span><span class="st">f cases with that got a first hearing within 6 months of filing:"</span>)</span>
 <span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> category, group <span class="kw">in</span> km_data.groupby(<span class="st">"case_category"</span>):</span>
 <span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(group) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>        kmf.fit(group[<span class="st">"time_to_hearing"</span>], event_observed<span class="op">=</span>group[<span class="st">"event"</span>], label<span class="op">=</span>category)</span>
@@ -405,7 +405,7 @@ Commercial Suits: 535/933 with first hearing, median time to first hearing: 3.42
 Suits: 725/1426 with first hearing, median time to first hearing: 4.22 months
 Summary Suits: 20/49 with first hearing, median time to first hearing: 6.00 months
 
-Probability of first hearing within 6 months:
+% of cases with that got a first hearing within 6 months of filing:
 Commercial Suits: 57.5%
 Suits: 51.1%
 Summary Suits: 40.9%</code></pre>
@@ -414,7 +414,7 @@ Summary Suits: 40.9%</code></pre>
 </section>
 <section id="time-to-disposal" class="level4">
 <h4 class="anchored" data-anchor-id="time-to-disposal">Time to Disposal</h4>
-<div id="f9623ed0" class="cell" data-execution_count="16">
+<div id="f9623ed0" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>bhc_matters <span class="op">=</span> bhc_matters.copy()</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>bhc_matters[<span class="st">"disposal_date"</span>] <span class="op">=</span> pd.to_datetime(bhc_matters[<span class="st">"disposal_date"</span>], errors<span class="op">=</span><span class="st">"coerce"</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>bhc_matters[<span class="st">"updated_on"</span>] <span class="op">=</span> pd.to_datetime(bhc_matters[<span class="st">"updated_on"</span>], errors<span class="op">=</span><span class="st">"coerce"</span>)</span>
@@ -462,12 +462,12 @@ Summary Suits: 40.9%</code></pre>
 <span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span>y_vals,</span>
 <span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>            mode<span class="op">=</span><span class="st">'lines'</span>,</span>
 <span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span>category,</span>
-<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>            hovertemplate<span class="op">=</span><span class="ss">f"&lt;b&gt;</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">&lt;/b&gt;&lt;br&gt;Years: %</span><span class="ch">{{</span><span class="ss">x:.2f</span><span class="ch">}}</span><span class="ss">&lt;br&gt;Disposal Prob: %</span><span class="ch">{{</span><span class="ss">y:.2%</span><span class="ch">}}</span><span class="ss">&lt;extra&gt;&lt;/extra&gt;"</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>            hovertemplate<span class="op">=</span><span class="ss">f"&lt;b&gt;</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">&lt;/b&gt;&lt;br&gt;Years: %</span><span class="ch">{{</span><span class="ss">x:.2f</span><span class="ch">}}</span><span class="ss">&lt;br&gt;% of cases disposed: %</span><span class="ch">{{</span><span class="ss">y:.2%</span><span class="ch">}}</span><span class="ss">&lt;extra&gt;&lt;/extra&gt;"</span></span>
 <span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>        ))</span>
 <span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
 <span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">"Years from Filing"</span>,</span>
-<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"Probability of Disposal"</span>,</span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"</span><span class="sc">% o</span><span class="st">f cases"</span>,</span>
 <span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>, <span class="fl">3.25</span>], showgrid<span class="op">=</span><span class="va">True</span>, zeroline<span class="op">=</span><span class="va">True</span>),</span>
 <span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(tickformat<span class="op">=</span><span class="st">".0%"</span>, showgrid<span class="op">=</span><span class="va">True</span>, zeroline<span class="op">=</span><span class="va">False</span>),</span>
 <span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="bu">dict</span>(</span>
@@ -572,7 +572,7 @@ Name: hearing_date, dtype: float64</code></pre>
 </section>
 <section id="time-to-first-hearing" class="level4">
 <h4 class="anchored" data-anchor-id="time-to-first-hearing">Time to first hearing</h4>
-<div id="f6b5e29a" class="cell" data-execution_count="22">
+<div id="f6b5e29a" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>nclt_hearings[<span class="st">"hearing_date"</span>] <span class="op">=</span> pd.to_datetime(nclt_hearings[<span class="st">"hearing_date"</span>], errors<span class="op">=</span><span class="st">"coerce"</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>nclt_matters[<span class="st">"filing_date"</span>] <span class="op">=</span> pd.to_datetime(nclt_matters[<span class="st">"filing_date"</span>], errors<span class="op">=</span><span class="st">"coerce"</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>nclt_matters[<span class="st">"updated_on"</span>] <span class="op">=</span> pd.to_datetime(nclt_matters[<span class="st">"updated_on"</span>], errors<span class="op">=</span><span class="st">"coerce"</span>)</span>
@@ -664,7 +664,7 @@ Name: hearing_date, dtype: float64</code></pre>
 <span id="cb17-89"><a href="#cb17-89" aria-hidden="true" tabindex="-1"></a>            mode<span class="op">=</span><span class="st">'lines'</span>,</span>
 <span id="cb17-90"><a href="#cb17-90" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span>category,</span>
 <span id="cb17-91"><a href="#cb17-91" aria-hidden="true" tabindex="-1"></a>            showlegend<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb17-92"><a href="#cb17-92" aria-hidden="true" tabindex="-1"></a>            hovertemplate<span class="op">=</span><span class="ss">f"&lt;b&gt;</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">&lt;/b&gt;&lt;br&gt;Months: %</span><span class="ch">{{</span><span class="ss">x:.1f</span><span class="ch">}}</span><span class="ss">&lt;br&gt;Hearing Prob: %</span><span class="ch">{{</span><span class="ss">y:.2%</span><span class="ch">}}</span><span class="ss">&lt;extra&gt;&lt;/extra&gt;"</span></span>
+<span id="cb17-92"><a href="#cb17-92" aria-hidden="true" tabindex="-1"></a>            hovertemplate<span class="op">=</span><span class="ss">f"&lt;b&gt;</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">&lt;/b&gt;&lt;br&gt;Months: %</span><span class="ch">{{</span><span class="ss">x:.1f</span><span class="ch">}}</span><span class="ss">&lt;br&gt;% of cases that got a first hearing: %</span><span class="ch">{{</span><span class="ss">y:.2%</span><span class="ch">}}</span><span class="ss">&lt;extra&gt;&lt;/extra&gt;"</span></span>
 <span id="cb17-93"><a href="#cb17-93" aria-hidden="true" tabindex="-1"></a>        ))</span>
 <span id="cb17-94"><a href="#cb17-94" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-95"><a href="#cb17-95" aria-hidden="true" tabindex="-1"></a>fig.add_shape(</span>
@@ -685,7 +685,7 @@ Name: hearing_date, dtype: float64</code></pre>
 <span id="cb17-110"><a href="#cb17-110" aria-hidden="true" tabindex="-1"></a>        showgrid<span class="op">=</span><span class="va">True</span></span>
 <span id="cb17-111"><a href="#cb17-111" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb17-112"><a href="#cb17-112" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb17-113"><a href="#cb17-113" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">"Probability of First Hearing"</span>,</span>
+<span id="cb17-113"><a href="#cb17-113" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">"</span><span class="sc">% o</span><span class="st">f cases"</span>,</span>
 <span id="cb17-114"><a href="#cb17-114" aria-hidden="true" tabindex="-1"></a>        tickformat<span class="op">=</span><span class="st">".0%"</span>,</span>
 <span id="cb17-115"><a href="#cb17-115" aria-hidden="true" tabindex="-1"></a>        showgrid<span class="op">=</span><span class="va">True</span></span>
 <span id="cb17-116"><a href="#cb17-116" aria-hidden="true" tabindex="-1"></a>    ),</span>
@@ -705,41 +705,38 @@ Name: hearing_date, dtype: float64</code></pre>
 <span id="cb17-130"><a href="#cb17-130" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-131"><a href="#cb17-131" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
 <span id="cb17-132"><a href="#cb17-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-133"><a href="#cb17-133" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Final dataset: </span><span class="sc">{</span><span class="bu">len</span>(km_data_nclt)<span class="sc">}</span><span class="ss"> cases for analysis"</span>)</span>
-<span id="cb17-134"><a href="#cb17-134" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Summary statistics by case category:"</span>)</span>
-<span id="cb17-135"><a href="#cb17-135" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> category, group <span class="kw">in</span> km_data_nclt.groupby(<span class="st">"case_category"</span>):</span>
-<span id="cb17-136"><a href="#cb17-136" aria-hidden="true" tabindex="-1"></a>    hearing_count <span class="op">=</span> group[<span class="st">"event"</span>].<span class="bu">sum</span>()</span>
-<span id="cb17-137"><a href="#cb17-137" aria-hidden="true" tabindex="-1"></a>    total_count <span class="op">=</span> <span class="bu">len</span>(group)</span>
-<span id="cb17-138"><a href="#cb17-138" aria-hidden="true" tabindex="-1"></a>    median_duration <span class="op">=</span> group[<span class="st">"time_to_hearing"</span>].median()</span>
-<span id="cb17-139"><a href="#cb17-139" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">int</span>(hearing_count)<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>total_count<span class="sc">}</span><span class="ss"> with first hearing, "</span></span>
-<span id="cb17-140"><a href="#cb17-140" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f"median time to first hearing: </span><span class="sc">{</span>median_duration<span class="sc">:.2f}</span><span class="ss"> months"</span>)</span>
-<span id="cb17-141"><a href="#cb17-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-142"><a href="#cb17-142" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Probability of first hearing within 6 months:"</span>)</span>
-<span id="cb17-143"><a href="#cb17-143" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> category, group <span class="kw">in</span> km_data_nclt.groupby(<span class="st">"case_category"</span>):</span>
-<span id="cb17-144"><a href="#cb17-144" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(group) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb17-145"><a href="#cb17-145" aria-hidden="true" tabindex="-1"></a>        kmf.fit(group[<span class="st">"time_to_hearing"</span>], event_observed<span class="op">=</span>group[<span class="st">"event"</span>], label<span class="op">=</span>category)</span>
-<span id="cb17-146"><a href="#cb17-146" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
-<span id="cb17-147"><a href="#cb17-147" aria-hidden="true" tabindex="-1"></a>            prob_at_6_months <span class="op">=</span> kmf.cumulative_density_at_times([<span class="dv">6</span>]).iloc[<span class="dv">0</span>]</span>
-<span id="cb17-148"><a href="#cb17-148" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>prob_at_6_months<span class="sc">:.1%}</span><span class="ss">"</span>)</span>
-<span id="cb17-149"><a href="#cb17-149" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
-<span id="cb17-150"><a href="#cb17-150" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">: Could not calculate probability at exactly 6 months (</span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-133"><a href="#cb17-133" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Summary statistics by case category:"</span>)</span>
+<span id="cb17-134"><a href="#cb17-134" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> category, group <span class="kw">in</span> km_data_nclt.groupby(<span class="st">"case_category"</span>):</span>
+<span id="cb17-135"><a href="#cb17-135" aria-hidden="true" tabindex="-1"></a>    hearing_count <span class="op">=</span> group[<span class="st">"event"</span>].<span class="bu">sum</span>()</span>
+<span id="cb17-136"><a href="#cb17-136" aria-hidden="true" tabindex="-1"></a>    total_count <span class="op">=</span> <span class="bu">len</span>(group)</span>
+<span id="cb17-137"><a href="#cb17-137" aria-hidden="true" tabindex="-1"></a>    median_duration <span class="op">=</span> group[<span class="st">"time_to_hearing"</span>].median()</span>
+<span id="cb17-138"><a href="#cb17-138" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">int</span>(hearing_count)<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>total_count<span class="sc">}</span><span class="ss"> with first hearing, "</span></span>
+<span id="cb17-139"><a href="#cb17-139" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f"median time to first hearing: </span><span class="sc">{</span>median_duration<span class="sc">:.2f}</span><span class="ss"> months"</span>)</span>
+<span id="cb17-140"><a href="#cb17-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-141"><a href="#cb17-141" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="sc">% o</span><span class="st">f cases that got a first hearing within 6 months:"</span>)</span>
+<span id="cb17-142"><a href="#cb17-142" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> category, group <span class="kw">in</span> km_data_nclt.groupby(<span class="st">"case_category"</span>):</span>
+<span id="cb17-143"><a href="#cb17-143" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(group) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb17-144"><a href="#cb17-144" aria-hidden="true" tabindex="-1"></a>        kmf.fit(group[<span class="st">"time_to_hearing"</span>], event_observed<span class="op">=</span>group[<span class="st">"event"</span>], label<span class="op">=</span>category)</span>
+<span id="cb17-145"><a href="#cb17-145" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb17-146"><a href="#cb17-146" aria-hidden="true" tabindex="-1"></a>            prob_at_6_months <span class="op">=</span> kmf.cumulative_density_at_times([<span class="dv">6</span>]).iloc[<span class="dv">0</span>]</span>
+<span id="cb17-147"><a href="#cb17-147" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>prob_at_6_months<span class="sc">:.1%}</span><span class="ss">"</span>)</span>
+<span id="cb17-148"><a href="#cb17-148" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb17-149"><a href="#cb17-149" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">: Could not calculate probability at exactly 6 months (</span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Final dataset: 2219 cases for analysis
-Summary statistics by case category:
+<pre><code>Summary statistics by case category:
 IBC: 2012/2219 with first hearing, median time to first hearing: 1.74 months
 
-Probability of first hearing within 6 months:
+% of cases that got a first hearing within 6 months:
 IBC: 90.7%</code></pre>
 </div>
 </div>
 </section>
 <section id="time-to-disposal-1" class="level4">
 <h4 class="anchored" data-anchor-id="time-to-disposal-1">Time to Disposal</h4>
-<div id="dce432f1" class="cell" data-execution_count="18">
+<div id="dce432f1" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>nclt_matters <span class="op">=</span> nclt_matters.copy()</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>nclt_matters[<span class="st">"disposal_date"</span>] <span class="op">=</span> pd.to_datetime(nclt_matters[<span class="st">"disposal_date"</span>], errors<span class="op">=</span><span class="st">"coerce"</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>nclt_matters[<span class="st">"updated_on"</span>] <span class="op">=</span> pd.to_datetime(nclt_matters[<span class="st">"updated_on"</span>], errors<span class="op">=</span><span class="st">"coerce"</span>)</span>
@@ -793,7 +790,7 @@ IBC: 90.7%</code></pre>
 <span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a>            mode<span class="op">=</span><span class="st">'lines'</span>,</span>
 <span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span>category,</span>
 <span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a>            showlegend<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a>            hovertemplate<span class="op">=</span><span class="ss">f"&lt;b&gt;</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">&lt;/b&gt;&lt;br&gt;Years: %</span><span class="ch">{{</span><span class="ss">x:.2f</span><span class="ch">}}</span><span class="ss">&lt;br&gt;Disposal Prob: %</span><span class="ch">{{</span><span class="ss">y:.2%</span><span class="ch">}}</span><span class="ss">&lt;extra&gt;&lt;/extra&gt;"</span></span>
+<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a>            hovertemplate<span class="op">=</span><span class="ss">f"&lt;b&gt;</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">&lt;/b&gt;&lt;br&gt;Years: %</span><span class="ch">{{</span><span class="ss">x:.2f</span><span class="ch">}}</span><span class="ss">&lt;br&gt;% of cases that got disposed: %</span><span class="ch">{{</span><span class="ss">y:.2%</span><span class="ch">}}</span><span class="ss">&lt;extra&gt;&lt;/extra&gt;"</span></span>
 <span id="cb20-55"><a href="#cb20-55" aria-hidden="true" tabindex="-1"></a>        ))</span>
 <span id="cb20-56"><a href="#cb20-56" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-57"><a href="#cb20-57" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
@@ -802,7 +799,7 @@ IBC: 90.7%</code></pre>
 <span id="cb20-60"><a href="#cb20-60" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">500</span>,</span>
 <span id="cb20-61"><a href="#cb20-61" aria-hidden="true" tabindex="-1"></a>    margin<span class="op">=</span><span class="bu">dict</span>(l<span class="op">=</span><span class="dv">0</span>, r<span class="op">=</span><span class="dv">0</span>, t<span class="op">=</span><span class="dv">10</span>, b<span class="op">=</span><span class="dv">10</span>),</span>
 <span id="cb20-62"><a href="#cb20-62" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(title<span class="op">=</span><span class="st">"Years from Filing"</span>, <span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>, <span class="fl">3.5</span>], showgrid<span class="op">=</span><span class="va">True</span>),</span>
-<span id="cb20-63"><a href="#cb20-63" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(title<span class="op">=</span><span class="st">"Probability of Disposal"</span>, <span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>], tickformat<span class="op">=</span><span class="st">".0%"</span>, showgrid<span class="op">=</span><span class="va">True</span>),</span>
+<span id="cb20-63"><a href="#cb20-63" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(title<span class="op">=</span><span class="st">"</span><span class="sc">% o</span><span class="st">f cases"</span>, <span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>], tickformat<span class="op">=</span><span class="st">".0%"</span>, showgrid<span class="op">=</span><span class="va">True</span>),</span>
 <span id="cb20-64"><a href="#cb20-64" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="bu">dict</span>(</span>
 <span id="cb20-65"><a href="#cb20-65" aria-hidden="true" tabindex="-1"></a>        orientation<span class="op">=</span><span class="st">"h"</span>,</span>
 <span id="cb20-66"><a href="#cb20-66" aria-hidden="true" tabindex="-1"></a>        yanchor<span class="op">=</span><span class="st">"bottom"</span>,</span>
@@ -825,7 +822,7 @@ IBC: 90.7%</code></pre>
 <span id="cb20-83"><a href="#cb20-83" aria-hidden="true" tabindex="-1"></a>    median_duration <span class="op">=</span> group[<span class="st">"duration_years"</span>].median()</span>
 <span id="cb20-84"><a href="#cb20-84" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>disposed_count<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>total_count<span class="sc">}</span><span class="ss"> disposed, median duration: </span><span class="sc">{</span>median_duration<span class="sc">:.2f}</span><span class="ss"> years"</span>)</span>
 <span id="cb20-85"><a href="#cb20-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-86"><a href="#cb20-86" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Probability of disposal within 3 year of filing:"</span>)</span>
+<span id="cb20-86"><a href="#cb20-86" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="sc">% o</span><span class="st">f cases that got disposed within 3 year of filing:"</span>)</span>
 <span id="cb20-87"><a href="#cb20-87" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> category, group <span class="kw">in</span> km_data.groupby(<span class="st">"case_category"</span>):</span>
 <span id="cb20-88"><a href="#cb20-88" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(group) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb20-89"><a href="#cb20-89" aria-hidden="true" tabindex="-1"></a>        kmf.fit(group[<span class="st">"duration_years"</span>], event_observed<span class="op">=</span>group[<span class="st">"event"</span>], label<span class="op">=</span>category)</span>
@@ -842,7 +839,7 @@ IBC: 90.7%</code></pre>
 Summary statistics by case category:
 IBC: 2737/5264 disposed, median duration: 0.73 years
 
-Probability of disposal within 3 year of filing:
+% of cases that got disposed within 3 year of filing:
 IBC: 54.6%</code></pre>
 </div>
 </div>
