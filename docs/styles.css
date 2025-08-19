@@ -1,0 +1,387 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #f5d5cf;
+}
+
+a.nav-link.active {
+  background-color: #de6e64;
+  color: white;
+  padding: 0.5rem 1rem; /* Optional: Adds padding for better appearance */
+  border-radius: 10px; /* ✅ Add this line */
+}
+
+/* Highlight boxes in soft peach tone */
+.highlight-box.active {
+  background-color: #de6e64;
+  color: white; /* Changes text to white when active */
+  padding: 1rem 1.5rem;
+  border: 1px solid #de6e64;
+  border-radius: 10px;
+  margin: 2rem 0;
+  transition: all 0.3s ease; /* Smooth transition for better UX */
+}
+
+/* Ensure nested text or links inside also turn white */
+.highlight-box.active * {
+  color: white !important;
+}
+
+/* Download buttons */
+.btn {
+  display: inline-block;
+  background-color: #de6e64;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 10px 15px 10px 0;
+  font-weight: bold;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+  background-color: #c7534a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Image box layout */
+.side-by-side {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.side-by-side img {
+  flex: 1 1 48%; /* Align with width for consistency */
+  width: 30%; /* Maintain approximate half-width */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-width: 300px; /* Minimum width to prevent excessive shrinking */
+}
+
+/* Lightbox image caption */
+img + em,
+img + strong {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #6c3a36;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .side-by-side img {
+    width: 100%; /* Stack images vertically on mobile */
+    min-width: 0; /* Reset min-width for stacking */
+    margin-bottom: 1rem; /* Add spacing between stacked images */
+  }
+
+  .btn {
+    display: block;
+    width: 80%;
+    text-align: center;
+    margin: 10px auto;
+  }
+}
+
+/* Analytics question section */
+.question-box {
+  background-color: #fef2f0;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 6px solid #de6e64;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: #de6e64;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.img-box {
+  background-color: #fbb6aa;
+  padding: 1rem;
+  border-radius: 12px;
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: center;
+  color: #6c3a36;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.img-box p {
+  margin: 0 0 0.5rem;
+}
+
+.analytics-img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  height: auto;
+}
+
+/* Dataset section */
+.dataset-boxes {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.dataset-card {
+  background-color: #fbb6aa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #de6e64;
+}
+
+/* Page padding */
+main, .content, .page-body {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 2rem 4rem;
+}
+
+/* Header styles */
+.main-header {
+  position: relative; /* Changed from fixed to relative */
+  width: 100%;
+  background-color: #f5d5cf;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.header-content h1 {
+  color: #6c3a36;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.header-topics {
+  text-align: right;
+}
+
+.header-topics span {
+  color: #de6e64;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.header-topics ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #6c3a36;
+}
+
+.header-topics ul li {
+  margin: 2px 0;
+}
+
+main {
+  padding: 20px; /* Adjusted padding */
+  margin-top: 0; /* Reset margin-top since header is no longer fixed */
+}
+
+.research-card {
+  background: #fdded8;
+  border: 1px solid #de6e64;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.research-card h3 {
+  color: #6c3a36;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.research-card strong {
+  color: #6c3a36;
+  font-weight: 600;
+}
+
+.research-card p {
+  color: #5a5a5a;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.research-card a {
+  background: #de6e64;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.research-card a:hover {
+  background: #c7534a;
+  color: white;
+  text-decoration: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .research-card {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .research-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+.callout-note {
+  border-left: 4px solid #de6e64 !important;
+  background: #fdded8 !important;
+}
+
+.callout-note .callout-body h2 {
+  color: #6c3a36;
+  margin-top: 0;
+}
+
+.callout-note .callout-body strong {
+  color: #6c3a36;
+}
+
+.callout-note .callout-body a {
+  background: #de6e64;
+  color: white;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.callout-note .callout-body a:hover {
+  background: #c7534a;
+  text-decoration: none;
+}
+
+/* Enhance table borders */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 4rem 0;
+  border: 2px solid #de6e64;
+  background-color: #fef2f0;
+}
+
+table th, table td {
+  border: 1px solid #de6e64;
+  padding: 1em 1.2em;
+  text-align: left;
+  vertical-align: middle;
+}
+
+table tr:first-child th {
+  background-color: #fdded8;
+  color: #6c3a36;
+  font-weight: 600;
+}
+
+h3, h4 {
+  margin-top: 2.5rem;
+}
+
+/* Style the entire TOC sidebar */
+.sidebar nav[role="doc-toc"] ul li a {
+  display: block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.sidebar nav[role="doc-toc"] ul li a:hover {
+  background-color: #fdded8;
+  color: #6c3a36;
+}
+
+.sidebar nav[role="doc-toc"] ul li a.active,
+.sidebar nav[role="doc-toc"] ul li.active > a {
+  background-color: #de6e64 !important;
+  color: white !important;
+}
+
+.research-card a::before,
+.research-card a::after {
+  display: none !important;
+}
+
+.sidebar nav[role="doc-toc"] ul li a.active,
+.sidebar nav[role="doc-toc"] ul li.active > a,
+.sidebar nav[role="doc-toc"] a.active {
+  background-color: #de6e64 !important;
+  color: white !important;
+}
+
+.sidebar nav[role="doc-toc"] ul li a:visited.active {
+  color: white !important;
+}
+
+/* Alternative: If your captions are in elements right after images */
+img + p,
+img + h3,
+img + h4 {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #6c3a36;
+  font-style: italic;
+  font-weight: 500;
+}
