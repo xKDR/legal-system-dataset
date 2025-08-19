@@ -27,13 +27,13 @@ To reproduce this research, please refer to the [jupyter notebook for analysis](
 #### % of cases with first hearing within 6 months of filing
 <iframe src="images/bhc_time_to_first_hearing.html" width="100%" height="600px" style="border:none; margin-top: 10px;" class="lightbox" data-group="gallery"></iframe>
 
-#### % of cases disposed off within 3 years of filing
+#### % of cases disposed  within 3 years of filing
 <iframe src="images/bhc_time_to_disposal.html" width="100%" height="600px" style="border:none; margin-top: 10px;" class="lightbox" data-group="gallery"></iframe>
 
 ### National Company Law Tribunal – Mumbai
 #### % of cases with first hearing within 6 months of filing
 <iframe src="images/nclt_time_to_first_hearing.html" width="100%" height="600px" style="border:none; margin-top: 10px;" class="lightbox" data-group="gallery"></iframe>
 
-#### % of cases disposed off within 3 years of filing
+#### % of cases disposed within 3 years of filing
 <iframe src="images/nclt_time_to_disposal.html" width="100%" height="600px" style="border:none; margin-top: 10px;" class="lightbox" data-group="gallery"></iframe>
 

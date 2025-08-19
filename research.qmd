@@ -12,7 +12,7 @@ This data has been used to generate the following research at XKDR.
 
 **Authors:** Pavithra Manivannan, Susan Thomas, and Bhargavi Zaveri-Shah 
 
-**Published:** Leap Blog, June 2023
+**Published:** The Leap Blog, June 2023
 
 This research explores how data can empower litigants to make better-informed decisions when facing debt disputes, examining the trade-offs between litigation and settlement.
 
@@ -34,7 +34,7 @@ A comprehensive project report analyzing court performance from the perspective 
 ## Do court vacations matter: evidence from the Bombay High Court
 **Authors:** Tushar Anand, Pavithra Manivannan, and Bhargavi Zaveri-Shah 
 
-**Published:** September 2024
+**Published:** The Leap Blog, September 2024
 
 This research examines whether court vacations actually contribute to case delays in the Indian judiciary, using evidence from the Bombay High Court to challenge common assumptions about their impact on judicial efficiency. 
 
